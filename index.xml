@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>My New Hugo Site</title>
-    <link>http://victoria-al.github.io/</link>
+    <link>https://victoria-al.github.io/</link>
     <description>Recent content on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 11 Jul 2020 08:48:22 +0800</lastBuildDate>
     
-	<atom:link href="http://victoria-al.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://victoria-al.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>我的Hugo个人博客搭建过程（一）</title>
-      <link>http://victoria-al.github.io/post/myblog/</link>
+      <link>https://victoria-al.github.io/post/myblog/</link>
       <pubDate>Sat, 11 Jul 2020 08:48:22 +0800</pubDate>
       
-      <guid>http://victoria-al.github.io/post/myblog/</guid>
+      <guid>https://victoria-al.github.io/post/myblog/</guid>
       <description> 我的Hugo个人博客搭建过程（一） 一直以来觉得写自己的Blog是一件挺厉害的事情，由于自己敲代码的能力不是很好，所以也觉得不够格去写Blog，不过因为自己想尝试一下并且看到了CodeSheep（一位B站编程UP主）的一个关于个人博客搭建的教程，所以就用了一个多小时的时间，初步搭建了属于我的一个Blog网站，接下来记录一下搭建的过程以及其中自己遇到的一点小问题。
 一、 下载对应版本的Hugo压缩包 1、 下载地址：[Hugo] https://github.com/gohugoio/hugo/releases（这里我下载的是v0.73.0版本）  2、 下载后解压，新建一个文件夹存放解压下来的hugo.exe文件 （这里需要添加环境变量，将hugo.exe的bin路径添加到Path里） 3、 检查安装情况，win + r 输入cmd打开终端，输入hugo version （有显示相关信息即安装成功）  二、 新建站点 在bin目录下终端输入hugo new site 站点文件夹名称 三、 安装主题 1、 下载地址：[Themes] https://themes.gohugo.io 下载自己喜欢的主题（这里我下载的是m10c，感觉还不错），进入themes文件夹，输入git命令下载  2、 配置（两种方式）和启动站点 （1）复制m10c中exampleSite的content和config.toml文件覆盖掉根目录下的content和config.toml文件  （2）在原配置文件config.toml中修改theme=&amp;quot;m10c&amp;quot;（对应的主题名称） （3）配置主题并启动博客 进入根目录，在终端中输入 hugo server -t m10c --buildDrafts  四、 新建文件（写文章用） 在终端输入hugo new post/MyBlog.md （在content中新建post文件夹，并在post中生成MyBlog.md文件）  到这里就是搭建基本Hugo博客的内容了，还有一步是部署到远程GitHub仓库上，下次继续补充。接下来讲一下几个注意的点：
 1. 在安装Hugo压缩包时，因为国内在GitHub上下载东西有时是很慢的，这里我是网上找到一个工具：FreeDownloadManager  （下载地址：[FLM] https://www.freedownloadmanager.org/zh）可以解决下载超慢的问题
