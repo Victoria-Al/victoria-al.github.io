@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>我的Hugo个人博客搭建过程（一） // My New Hugo Site</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.73.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="http://victoria-al.github.io/css/main.min.88e7083eff65effb7485b6e6f38d10afbec25093a6fac42d734ce9024d3defbd.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="我的Hugo个人博客搭建过程（一）"/>
+<meta name="twitter:description" content=" 我的Hugo个人博客搭建过程（一） 一直以来觉得写自己的Blog是一件挺厉害的事情，由于自己敲代码的能力不是很好，所以也觉得不够格去写Blog，不过因为自己想尝试一下并且看到了CodeSheep（一位B站编程UP主）的一个关于个人博客搭建的教程，所以就用了一个多小时的时间，初步搭建了属于我的一个Blog网站，接下来记录一下搭建的过程以及其中自己遇到的一点小问题。
+一、 下载对应版本的Hugo压缩包 1、 下载地址：[Hugo] https://github.com/gohugoio/hugo/releases（这里我下载的是v0.73.0版本）  2、 下载后解压，新建一个文件夹存放解压下来的hugo.exe文件 （这里需要添加环境变量，将hugo.exe的bin路径添加到Path里） 3、 检查安装情况，win &#43; r 输入cmd打开终端，输入hugo version （有显示相关信息即安装成功）  二、 新建站点 在bin目录下终端输入hugo new site 站点文件夹名称 三、 安装主题 1、 下载地址：[Themes] https://themes.gohugo.io 下载自己喜欢的主题（这里我下载的是m10c，感觉还不错），进入themes文件夹，输入git命令下载  2、 配置（两种方式）和启动站点 （1）复制m10c中exampleSite的content和config.toml文件覆盖掉根目录下的content和config.toml文件  （2）在原配置文件config.toml中修改theme=&quot;m10c&quot;（对应的主题名称） （3）配置主题并启动博客 进入根目录，在终端中输入 hugo server -t m10c --buildDrafts  四、 新建文件（写文章用） 在终端输入hugo new post/MyBlog.md （在content中新建post文件夹，并在post中生成MyBlog.md文件）  到这里就是搭建基本Hugo博客的内容了，还有一步是部署到远程GitHub仓库上，下次继续补充。接下来讲一下几个注意的点：
+1. 在安装Hugo压缩包时，因为国内在GitHub上下载东西有时是很慢的，这里我是网上找到一个工具：FreeDownloadManager  （下载地址：[FLM] https://www.freedownloadmanager.org/zh）可以解决下载超慢的问题
+2. 注意下载后要配置环境变量 PATH，不然无法在终端查找是否安装 3. 第一种配置theme的方式，要注意config.toml是否有themes=&quot;xxx&quot;的语句，有就删除，就可以正确启动站点，不然会找不到主题模块，无法启动  4、在博客文件上删除draft: true语句，这里我调试的时候会导致我文章没法显示出来，去掉后就可以了  "/>
+
+    <meta property="og:title" content="我的Hugo个人博客搭建过程（一）" />
+<meta property="og:description" content=" 我的Hugo个人博客搭建过程（一） 一直以来觉得写自己的Blog是一件挺厉害的事情，由于自己敲代码的能力不是很好，所以也觉得不够格去写Blog，不过因为自己想尝试一下并且看到了CodeSheep（一位B站编程UP主）的一个关于个人博客搭建的教程，所以就用了一个多小时的时间，初步搭建了属于我的一个Blog网站，接下来记录一下搭建的过程以及其中自己遇到的一点小问题。
+一、 下载对应版本的Hugo压缩包 1、 下载地址：[Hugo] https://github.com/gohugoio/hugo/releases（这里我下载的是v0.73.0版本）  2、 下载后解压，新建一个文件夹存放解压下来的hugo.exe文件 （这里需要添加环境变量，将hugo.exe的bin路径添加到Path里） 3、 检查安装情况，win &#43; r 输入cmd打开终端，输入hugo version （有显示相关信息即安装成功）  二、 新建站点 在bin目录下终端输入hugo new site 站点文件夹名称 三、 安装主题 1、 下载地址：[Themes] https://themes.gohugo.io 下载自己喜欢的主题（这里我下载的是m10c，感觉还不错），进入themes文件夹，输入git命令下载  2、 配置（两种方式）和启动站点 （1）复制m10c中exampleSite的content和config.toml文件覆盖掉根目录下的content和config.toml文件  （2）在原配置文件config.toml中修改theme=&quot;m10c&quot;（对应的主题名称） （3）配置主题并启动博客 进入根目录，在终端中输入 hugo server -t m10c --buildDrafts  四、 新建文件（写文章用） 在终端输入hugo new post/MyBlog.md （在content中新建post文件夹，并在post中生成MyBlog.md文件）  到这里就是搭建基本Hugo博客的内容了，还有一步是部署到远程GitHub仓库上，下次继续补充。接下来讲一下几个注意的点：
+1. 在安装Hugo压缩包时，因为国内在GitHub上下载东西有时是很慢的，这里我是网上找到一个工具：FreeDownloadManager  （下载地址：[FLM] https://www.freedownloadmanager.org/zh）可以解决下载超慢的问题
+2. 注意下载后要配置环境变量 PATH，不然无法在终端查找是否安装 3. 第一种配置theme的方式，要注意config.toml是否有themes=&quot;xxx&quot;的语句，有就删除，就可以正确启动站点，不然会找不到主题模块，无法启动  4、在博客文件上删除draft: true语句，这里我调试的时候会导致我文章没法显示出来，去掉后就可以了  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://victoria-al.github.io/post/myblog/" />
+<meta property="article:published_time" content="2020-07-11T08:48:22+08:00" />
+<meta property="article:modified_time" content="2020-07-11T08:48:22+08:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="http://victoria-al.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <h1>My New Hugo Site</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/vaga" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">我的Hugo个人博客搭建过程（一）</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jul 11, 2020
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      <hr>
+<h1 id="我的hugo个人博客搭建过程一">我的Hugo个人博客搭建过程（一）</h1>
+<p>一直以来觉得写自己的Blog是一件挺厉害的事情，由于自己敲代码的能力不是很好，所以也觉得不够格去写Blog，不过因为自己想尝试一下并且看到了CodeSheep（一位B站编程UP主）的一个关于个人博客搭建的教程，所以就用了一个多小时的时间，初步搭建了属于我的一个Blog网站，接下来记录一下搭建的过程以及其中自己遇到的一点小问题。</p>
+<pre><code>一、 下载对应版本的Hugo压缩包
+1、 下载地址：[Hugo] https://github.com/gohugoio/hugo/releases（这里我下载的是v0.73.0版本）
+</code></pre>
+<p><img src="https://i.loli.net/2020/07/10/9wTDjNpVQfBKkIo.png" alt="版本选择"></p>
+<pre><code>2、 下载后解压，新建一个文件夹存放解压下来的hugo.exe文件 （这里需要添加环境变量，将hugo.exe的bin路径添加到Path里）
+3、 检查安装情况，win + r 输入cmd打开终端，输入hugo version （有显示相关信息即安装成功）
+</code></pre>
+<p><img src="https://i.loli.net/2020/07/10/9cEiRraBDtI6YX4.png" alt="检查安装"></p>
+<pre><code>二、 新建站点
+在bin目录下终端输入hugo new site 站点文件夹名称
+三、 安装主题
+1、 下载地址：[Themes] https://themes.gohugo.io
+下载自己喜欢的主题（这里我下载的是m10c，感觉还不错），进入themes文件夹，输入git命令下载
+</code></pre>
+<p><img src="https://i.loli.net/2020/07/10/NASQX84wPitm5ah.png" alt="git clone"></p>
+<pre><code>2、 配置（两种方式）和启动站点
+（1）复制m10c中exampleSite的content和config.toml文件覆盖掉根目录下的content和config.toml文件
+</code></pre>
+<p><img src="https://i.loli.net/2020/07/10/mr62UTVn1HDAByO.png" alt="覆盖文件夹"></p>
+<pre><code>（2）在原配置文件config.toml中修改theme=&quot;m10c&quot;（对应的主题名称）
+
+（3）配置主题并启动博客
+进入根目录，在终端中输入 hugo server -t m10c --buildDrafts
+</code></pre>
+<p><img src="https://i.loli.net/2020/07/10/1SU7FzlnHMaD2Av.png" alt="配置并启动"></p>
+<pre><code>四、 新建文件（写文章用）
+ 在终端输入hugo new post/MyBlog.md
+（在content中新建post文件夹，并在post中生成MyBlog.md文件）
+</code></pre>
+<p><img src="https://i.loli.net/2020/07/10/3ATa7Qrwl8hp42P.png" alt="post/MyBlog.md"></p>
+<p>到这里就是搭建基本Hugo博客的内容了，还有一步是部署到远程GitHub仓库上，下次继续补充。接下来讲一下几个注意的点：</p>
+<pre><code>1. 在安装Hugo压缩包时，因为国内在GitHub上下载东西有时是很慢的，这里我是网上找到一个工具：FreeDownloadManager
+</code></pre>
+<p>（下载地址：[FLM] <a href="https://www.freedownloadmanager.org/zh">https://www.freedownloadmanager.org/zh</a>）可以解决下载超慢的问题</p>
+<pre><code>2. 注意下载后要配置环境变量 PATH，不然无法在终端查找是否安装
+3. 第一种配置theme的方式，要注意config.toml是否有themes=&quot;xxx&quot;的语句，有就删除，就可以正确启动站点，不然会找不到主题模块，无法启动
+</code></pre>
+<p><img src="https://i.loli.net/2020/07/10/rz8DXyCBARPM4Gb.png" alt="路径问题"></p>
+<pre><code>4、在博客文件上删除draft: true语句，这里我调试的时候会导致我文章没法显示出来，去掉后就可以了
+</code></pre>
+<p><img src="https://pic.downk.cc/item/5f0910d014195aa59417c336.png" alt="draft语句配置问题"></p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
