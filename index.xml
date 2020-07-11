@@ -1,15 +1,30 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
+    <title>太阳</title>
     <link>https://victoria-al.github.io/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <description>Recent content on 太阳</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 Jul 2020 08:48:22 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 11 Jul 2020 22:32:03 +0800</lastBuildDate>
     
 	<atom:link href="https://victoria-al.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>我的Hugo个人博客搭建过程（二）</title>
+      <link>https://victoria-al.github.io/post/myblog2/</link>
+      <pubDate>Sat, 11 Jul 2020 22:32:03 +0800</pubDate>
+      
+      <guid>https://victoria-al.github.io/post/myblog2/</guid>
+      <description>第一篇讲了Hugo环境的搭建和一些小问题，接下来就总结一下后来部署到远程GitHub上的步骤
+一、 在GitHub上的配置  新建仓库 注意名字是用户名小写形式 + github.io    复制两段链接字段，备用   二、 新建静态页面  1、 在根目录下输入 hugo命令，成功后hugo会在根目录下创建一个public文件夹   2、 在配置文件中，将baseUrl改成 baseUrl=&amp;quot;https://victoria-ai.github.io&amp;rdquo; （这里是我新建的仓库链接，配置时注意要修改成自己的）  三、与远程GitHub建立连接  进入public文件夹，接下来是连续的git命令操作：  &amp;ndash; git init (在public文件夹下初始化一个本地仓库)
+&amp;ndash; git add . （监控工作区，也就是根目录中的文件发生变化，提交给暂存区）
+&amp;ndash; git commit -m &amp;ldquo;要显示的提交日志&amp;rdquo; (将暂存区改动提交到本地版本库)
+&amp;ndash; git remote add origin https://github.com/Victoria-Al/victoria-ai.github.io.git
+&amp;ndash; git push -u origin master (这里会要求你输入GitHub的账户密码，将public里的文件push到仓库中)
+四、访问部署后的Hugo个人博客  在第一步时复制的github.io结尾的链接就是部署后的访问链接，以后可直接访问，因为现在它还是静态页面，之后可以自己尝试去配置和修改个人的博客网站  五、之后的提交博客文件操作  1、 在根目录下用终端 键入hugo命令 2 进入public文件夹，输入之前类似的提交命令（此时不用再初始化仓库和链接远程GitHub地址）  &amp;ndash; git add .</description>
+    </item>
     
     <item>
       <title>我的Hugo个人博客搭建过程（一）</title>
