@@ -6,10 +6,24 @@
     <description>Recent content on 太阳</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 Jul 2020 22:32:03 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 13 Jul 2020 19:33:28 +0800</lastBuildDate>
     
 	<atom:link href="https://victoria-al.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>啊立的Spring学习笔记（一）</title>
+      <link>https://victoria-al.github.io/post/spring_one/</link>
+      <pubDate>Mon, 13 Jul 2020 19:33:28 +0800</pubDate>
+      
+      <guid>https://victoria-al.github.io/post/spring_one/</guid>
+      <description>Spring框架学习笔记（一） 学习Spring这段时间，一直有粗略的做着笔记，想根据做的笔记和代码，把对Spring的理解和一些概念再次记录下来，巩固一下也方便以后回看。 一、Spring简介   1、Spring是一个分层的Java SE/EE 应用的全栈轻量级框架。    2、两大内核：IOC（控制反转）和AOP（面向切面编程） 二、IOC 控制反转 原理剖析
+    1、先用一组程序创建对象图来了解传统程序和使用IOC/DI容器后的程序在创建对象时的不同操作   2、程序代码实现(同个程序中修改)
+  2.1 传统模式下实现  2.2 可以很明显看出，业务层实现类需要通过new操作符生成持久层对象，用户类需要通过new操作符生成业务层对象，它们之间的耦合度非常高，会导致代码的独立性很差。
+2.3 创建配置文件bean.properties （resources文件夹下）
+ accountDao=com.it.DAO.impl.AccountDaoImpl accountService=com.it.service.impl.AccountServiceImpl 2.4 新建BeanFactory工厂类反射创建对象
+// 定义一个Properties对象 private static final Properties prop; private static final Map&amp;lt;String, Object&amp;gt; beans; // 使用静态代码块为Properties对象赋值 static { // 实例化对象 prop = new Properties(); // 获取properties文件的流对象 // 类加载器 InputStream in = BeanFactory.class.getClassLoader().getResourceAsStream(&amp;quot;bean.properties&amp;quot;); try { prop.</description>
+    </item>
     
     <item>
       <title>我的Hugo个人博客搭建过程（二）</title>
