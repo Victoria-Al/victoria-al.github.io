@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>啊立的Spring学习笔记（二） // 太阳</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.73.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://victoria-al.github.io/css/main.min.88e7083eff65effb7485b6e6f38d10afbec25093a6fac42d734ce9024d3defbd.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="啊立的Spring学习笔记（二）"/>
+<meta name="twitter:description" content="上一篇记录到Spring中IOC的主要作用和原理，接下来是IOC和DI之间的联系以及Spring对bean的管理细节。 以前我们创建对象一般是使用new构造函数来创建，现在则是交给Spring来帮我们管理对象的创建。
+一、创建IOC容器的两大接口   1、ApplicationContext接口：
+使用ClassPathXmlApplicationContext解析XML文件创建核心容器，创建对象采取的策略为立即加载的方式，即一读取就创建（适用于单例对象）
+    2、BeanFactory接口
+使用ClassPathResource和XmlBeanFactory解析XML文件创建核心容器，创建对象采取的策略为延迟加载方式，即要用到才创建（适用于多利对象）
+  二、IOC与DI的联系 1、IOC控制反转是一种设计思想，DI是实现它的方式，来实现我们所要的低耦合程序；
+2、它们是从不同的角度来描述同一件事情。就是说，创建容器，通过依赖关系注入对象。
+三、Spring对bean的管理细节  1、创建bean的三种方式  （1）使用默认构造函数创建
+（2）使用普通工厂类中的方法创建
+（3）使用工厂类中的静态方法创建
+ 2、bean对象的作用范围   3、bean对象的生命周期  将对象交给Spring管理，方便我们之后做依赖的注入，注入的方式有通过构造函数、set方法和使用注解三种方式，注解与xml配置文件共用的方式我觉得使更为方便一些，纯注解的话需要将数据源配置、包扫描新建成配置类，代码量也蛮多的，所以我觉得二者结合，会好一些；今天先记录到这里，注入方式的内容下次再记录。加油"/>
+
+    <meta property="og:title" content="啊立的Spring学习笔记（二）" />
+<meta property="og:description" content="上一篇记录到Spring中IOC的主要作用和原理，接下来是IOC和DI之间的联系以及Spring对bean的管理细节。 以前我们创建对象一般是使用new构造函数来创建，现在则是交给Spring来帮我们管理对象的创建。
+一、创建IOC容器的两大接口   1、ApplicationContext接口：
+使用ClassPathXmlApplicationContext解析XML文件创建核心容器，创建对象采取的策略为立即加载的方式，即一读取就创建（适用于单例对象）
+    2、BeanFactory接口
+使用ClassPathResource和XmlBeanFactory解析XML文件创建核心容器，创建对象采取的策略为延迟加载方式，即要用到才创建（适用于多利对象）
+  二、IOC与DI的联系 1、IOC控制反转是一种设计思想，DI是实现它的方式，来实现我们所要的低耦合程序；
+2、它们是从不同的角度来描述同一件事情。就是说，创建容器，通过依赖关系注入对象。
+三、Spring对bean的管理细节  1、创建bean的三种方式  （1）使用默认构造函数创建
+（2）使用普通工厂类中的方法创建
+（3）使用工厂类中的静态方法创建
+ 2、bean对象的作用范围   3、bean对象的生命周期  将对象交给Spring管理，方便我们之后做依赖的注入，注入的方式有通过构造函数、set方法和使用注解三种方式，注解与xml配置文件共用的方式我觉得使更为方便一些，纯注解的话需要将数据源配置、包扫描新建成配置类，代码量也蛮多的，所以我觉得二者结合，会好一些；今天先记录到这里，注入方式的内容下次再记录。加油" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://victoria-al.github.io/post/spring_two/" />
+<meta property="article:published_time" content="2020-07-17T22:01:08+08:00" />
+<meta property="article:modified_time" content="2020-07-17T22:01:08+08:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://victoria-al.github.io"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <h1>太阳</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/vaga" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">啊立的Spring学习笔记（二）</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jul 17, 2020
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      <p>上一篇记录到Spring中IOC的主要作用和原理，接下来是IOC和DI之间的联系以及Spring对bean的管理细节。
+以前我们创建对象一般是使用new构造函数来创建，现在则是交给Spring来帮我们管理对象的创建。</p>
+<h3 id="一创建ioc容器的两大接口">一、创建IOC容器的两大接口</h3>
+<ul>
+<li>
+<p>1、ApplicationContext接口：</p>
+<p>使用ClassPathXmlApplicationContext解析XML文件创建核心容器，创建对象采取的策略为立即加载的方式，即一读取就创建（适用于单例对象）</p>
+</li>
+</ul>
+<p><img src="https://pic.downk.cc/item/5f0d7ef314195aa594d9053d.png" alt="容器1"></p>
+<ul>
+<li>
+<p>2、BeanFactory接口</p>
+<p>使用ClassPathResource和XmlBeanFactory解析XML文件创建核心容器，创建对象采取的策略为延迟加载方式，即要用到才创建（适用于多利对象）</p>
+</li>
+</ul>
+<p><img src="https://pic.downk.cc/item/5f0d7f0a14195aa594d90b14.png" alt="容器2"></p>
+<h3 id="二ioc与di的联系">二、IOC与DI的联系</h3>
+<p>1、IOC控制反转是一种设计思想，DI是实现它的方式，来实现我们所要的低耦合程序；</p>
+<p>2、它们是从不同的角度来描述同一件事情。就是说，创建容器，通过依赖关系注入对象。</p>
+<p><img src="https://pic.downk.cc/item/5f0d7f1f14195aa594d9110e.png" alt="ioc与di"></p>
+<h3 id="三spring对bean的管理细节">三、Spring对bean的管理细节</h3>
+<ul>
+<li>1、创建bean的三种方式</li>
+</ul>
+<p>（1）使用默认构造函数创建</p>
+<p><img src="https://pic.downk.cc/item/5f0d7f3814195aa594d91655.png" alt="构造"></p>
+<p>（2）使用普通工厂类中的方法创建</p>
+<p><img src="https://pic.downk.cc/item/5f0d7f4d14195aa594d91d03.png" alt="普通"></p>
+<p>（3）使用工厂类中的静态方法创建</p>
+<p><img src="https://pic.downk.cc/item/5f0d7f6c14195aa594d9257f.png" alt="静态"></p>
+<ul>
+<li>2、bean对象的作用范围</li>
+</ul>
+<p><img src="https://pic.downk.cc/item/5f0d7f7d14195aa594d92be1.png" alt="范围"></p>
+<ul>
+<li>3、bean对象的生命周期</li>
+</ul>
+<p><img src="https://pic.downk.cc/item/5f0d7f8c14195aa594d92fc2.png" alt="周期"></p>
+<p>将对象交给Spring管理，方便我们之后做依赖的注入，注入的方式有通过构造函数、set方法和使用注解三种方式，注解与xml配置文件共用的方式我觉得使更为方便一些，纯注解的话需要将数据源配置、包扫描新建成配置类，代码量也蛮多的，所以我觉得二者结合，会好一些；今天先记录到这里，注入方式的内容下次再记录。加油</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

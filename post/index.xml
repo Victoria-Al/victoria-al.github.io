@@ -6,10 +6,29 @@
     <description>Recent content in Posts on 太阳</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Jul 2020 19:33:28 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 17 Jul 2020 22:01:08 +0800</lastBuildDate>
     
 	<atom:link href="https://victoria-al.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>啊立的Spring学习笔记（二）</title>
+      <link>https://victoria-al.github.io/post/spring_two/</link>
+      <pubDate>Fri, 17 Jul 2020 22:01:08 +0800</pubDate>
+      
+      <guid>https://victoria-al.github.io/post/spring_two/</guid>
+      <description>上一篇记录到Spring中IOC的主要作用和原理，接下来是IOC和DI之间的联系以及Spring对bean的管理细节。 以前我们创建对象一般是使用new构造函数来创建，现在则是交给Spring来帮我们管理对象的创建。
+一、创建IOC容器的两大接口   1、ApplicationContext接口：
+使用ClassPathXmlApplicationContext解析XML文件创建核心容器，创建对象采取的策略为立即加载的方式，即一读取就创建（适用于单例对象）
+    2、BeanFactory接口
+使用ClassPathResource和XmlBeanFactory解析XML文件创建核心容器，创建对象采取的策略为延迟加载方式，即要用到才创建（适用于多利对象）
+  二、IOC与DI的联系 1、IOC控制反转是一种设计思想，DI是实现它的方式，来实现我们所要的低耦合程序；
+2、它们是从不同的角度来描述同一件事情。就是说，创建容器，通过依赖关系注入对象。
+三、Spring对bean的管理细节  1、创建bean的三种方式  （1）使用默认构造函数创建
+（2）使用普通工厂类中的方法创建
+（3）使用工厂类中的静态方法创建
+ 2、bean对象的作用范围   3、bean对象的生命周期  将对象交给Spring管理，方便我们之后做依赖的注入，注入的方式有通过构造函数、set方法和使用注解三种方式，注解与xml配置文件共用的方式我觉得使更为方便一些，纯注解的话需要将数据源配置、包扫描新建成配置类，代码量也蛮多的，所以我觉得二者结合，会好一些；今天先记录到这里，注入方式的内容下次再记录。加油</description>
+    </item>
     
     <item>
       <title>啊立的Spring学习笔记（一）</title>
